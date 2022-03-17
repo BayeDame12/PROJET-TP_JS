@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.overview{
+    position: fixed;
+    background:#f5f5f5;
+    width: 70%;
+    height: 70vh;
+    margin: 30px; 
+    box-shadow:
+  8.1px 20.7px 1.1px rgba(0, 0, 0, 0.016),
+  15px 38.3px 2.8px rgba(0, 0, 0, 0.023),
+  20.9px 53.2px 5.1px rgba(0, 0, 0, 0.027),
+  26.1px 66.6px 8.5px rgba(0, 0, 0, 0.032),
+  31.8px 81.2px 13.6px rgba(0, 0, 0, 0.037),
+  41.2px 104.9px 21.8px rgba(0, 0, 0, 0.046),
+  71px 181px 44px rgba(0, 0, 0, 0.07)
+;
+}
+.container{
+    background: #ffffff;
+    width: 50vw;
+    padding: 2rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    transform: translate(3%, 50%);
+}
+button{
+    display: flex;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+   font-weight: bold;
+}
+.success{
+    background:#28a745;
+}
+.danger{
+    background:#bd2130;
+}
+.warning{
+    background:#ffc107;
+}
+.infos{
+    background:#17a2b8;
+}
+@media screen and (max-width:900px){
+    #notification{
+        visibility:hidden;
+    }
+    button{
+        width:15vw;
+    height:7vh;
+    font-size: 10px;
+    }
+}
+
+
+
