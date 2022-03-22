@@ -11,7 +11,7 @@ let secondesEl = document.getElementById("s");
 let now = new Date();
 const dateOffsetInMinutes = now.getTimezoneOffset();
 
-const unJourEnMs = 1000 * 60 * 60 * 24;
+const unJourEnMs =1000 * 60 * 60 * 24;
 const uneHeureEnMs = 1000 * 60 * 60;
 const uneMinuteEnMs = 1000 * 60;
 
