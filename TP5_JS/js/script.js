@@ -18,9 +18,46 @@ fetch(APIURL)
         });
     })
 
+
+    //******************* */
+    const input=document.querySelector('input')
+   const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+   
+   input.addEventListener('input',()=>{
+    //    main.innerHTML=""
+let saisi=input.value
+    fetch("https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query="+saisi)
+    .then(function(APIfiles){
+        return APIfiles.json()
+        
+    })
+    
+    .then(function(APIcontent){
+        
+        APIcontent.results.forEach(movies => {
+            
+            // alert('hamza')
+            let titre =movies.original_title
+            let apreciation=movies.overview
+            let photo=IMGPATH+movies.backdrop_path
+            let compte=movies.vote_average
+            
+             creationfilm(photo,titre,apreciation,compte)
+         });
+     })
+
+
+
+
+})
+
+    //******************* */
+
+
 function creationfilm(photos,titles,votes,descs){
 const body =document.querySelector('body')
 const main =document.querySelector('main')
+
 
 
 //Create tag 
@@ -40,21 +77,20 @@ divmov.setAttribute('class','div-mov')
 title.setAttribute('class','title')
 spanchang.setAttribute('class','spanchang')
 overview.setAttribute('class','overview')
-
+p.innerHTML=votes
+title.innerHTML=titles
+spanchang.innerHTML=descs
 //ADD CLASS listStyle: 
 movie.classList.add('movie')
 divmov.classList.add('div-mov')
 title.classList.add('title')
 spanchang.classList.add('spanchang')
 overview.classList.add('overview')
-
-
-
-
+spanchang.style.color='green'
 //Append
+body.appendChild(main)
 
 main.append(movie)
-
 
 movie.appendChild(img)
 movie.appendChild(divmov)
@@ -65,9 +101,5 @@ divmov.appendChild(spanchang)
 
 overview.appendChild(p)
 
-body.appendChild(main)
 
 }
-
-
-     
